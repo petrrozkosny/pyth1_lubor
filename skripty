@@ -16,5 +16,4 @@ data.head(pocet_radku)
 
 
 _____________________________________________________________
-
-mesta = ['praha','brno','ostrava'],['plzen','olomouc']
+mesta = ['praha','brno','ostrava','plzen','olomouc']
