@@ -106,3 +106,27 @@ soubory = os.listdir(cesta_slozky)
 for i in soubory:
     if '.csv' in i:
         print(i)
+
+____________________________________________________________________________________
+
+# za pomoci modulu os iterovat slozkou mete1 a do konzole vypsat kazdy jeden nazev souboru
+
+# import modulu os
+import os
+import pandas as pd
+
+#vytvoreni prazdneho dataframe
+df = pd.DataFrame()
+cesta_slozky = r'C:\Users\Student\Downloads\data\meteo1'
+soubory = os.listdir(cesta_slozky)
+
+# prochazime soubory ve slozce
+for i in soubory:
+    # v nazvu souboru, coz je text, hledame retezec ".csv"
+    if '.csv' in i:
+        # za pomoci path.join skladame cestu souboru, kdy spoujujeme cestu slozky a nazev konkretniho souboru
+        cesta_souboru = os.path.join(cesta_slozky,i)
+        # k dataframe v promenne df pripojuji dataframe vyrobeny z aktualniho souboru
+        df = pd.concat([df,pd.read_csv(cesta_souboru)])
+        
+
