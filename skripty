@@ -17,3 +17,20 @@ data.head(pocet_radku)
 
 _____________________________________________________________
 mesta = ['praha','brno','ostrava','plzen','olomouc']
+
+# prikaz for prochazi listem od prvni do posledni pozice
+# v promenne i mam vzdy aktualni mesto
+for i in mesta:
+    # vypisujeme aktulani hodnotu i, tj. jedno mesto po druhem
+    print('aktualni mesto',i)
+
+
+i = 0
+
+# while vykonava iteraci dokud je splnena podminka
+while i < len(mesta):
+    # ptame se na hodnotu listu na konkretni pozici
+    print(mesta[i])
+    # k i pricitame 1
+    i+=1
+
