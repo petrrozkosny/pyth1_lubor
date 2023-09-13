@@ -44,3 +44,16 @@ for k,v in mesta.items():
         continue
     else:
         print(f'mesto {k} se nachazi v okrese {v}')
+
+
+__________________________________________________________
+
+x = int(input('Zadejte cislo: '))
+
+'pokud je x >10, tak vypis "x vetsi 10", jinak vypis "x je mensi ci rovno 10'
+
+if x > 10:
+    print('x je vetsi nez 10')
+else:
+    print('x je mensi nebo rovno 10')
+
