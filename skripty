@@ -13,3 +13,8 @@ data.to_excel(r"C:\Users\Student\Downloads\data\meteo1\3407572.xlsx")
 # promenna typu integer
 pocet_radku = 2
 data.head(pocet_radku)
+
+
+_____________________________________________________________
+
+mesta = ['praha','brno','ostrava'],['plzen','olomouc']
