@@ -73,13 +73,21 @@ slovnik = df.to_dict(orient='dict')
 slovnik = slovnik['měna']
 
 # pokud je hodnota klíče koruna, tak výpišem "V zemi {země} se platí korunou", pokud ne, tak nepíšeme nic
-
+'''
 for k,i in slovnik.items():
     if i == 'koruna':
         print(f'v zemi {k} se plati korunou')
     else:
         pass
+'''
+ # vymazat klic:hodnota, kde se neplatí koruna. 
+# tj. za pomoci metody pop odstranit klic zeme, kde se neplati korunou
 
+upraveny_slovnik = slovnik.copy()
 
+for k,i in slovnik.items():
+    if i != 'koruna':
+        upraveny_slovnik.pop(k)
 
-
+    
+upraveny_slovnik
