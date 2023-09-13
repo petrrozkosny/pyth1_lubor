@@ -1,0 +1,15 @@
+import pandas as pd
+import openpyxl
+# promenna typu integer (cele cislo)
+pocet_radku = 10
+#promenna typu text
+cesta_souboru = r"C:\Users\Student\Downloads\data\meteo1\3407572.csv"
+# promenna typu dataframe
+data = pd.read_csv(cesta_souboru)
+# promenna typu list
+sloupce = ['NAME','DATE','PRCP']
+data = data[sloupce]
+data.to_excel(r"C:\Users\Student\Downloads\data\meteo1\3407572.xlsx")
+# promenna typu integer
+pocet_radku = 2
+data.head(pocet_radku)
