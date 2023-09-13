@@ -91,3 +91,18 @@ for k,i in slovnik.items():
 
     
 upraveny_slovnik
+
+______________________________________________________________________
+
+# za pomoci modulu os iterovat slozkou mete1 a do konzole vypsat kazdy jeden nazev souboru
+
+# import modulu os
+import os
+
+cesta_slozky = r'C:\Users\Student\Downloads\data\meteo1'
+
+soubory = os.listdir(cesta_slozky)
+
+for i in soubory:
+    if '.csv' in i:
+        print(i)
