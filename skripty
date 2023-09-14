@@ -255,3 +255,11 @@ def pozdrav(uzivatel,cast_dne = None):
         print(f'Dobry {cast_dne},{uzivatel}')
 
 pozdrav('Miro', 'odpolodne')
+
+______________________________________________________
+
+def pozdrav_uzivatele(**kwargs):
+    for k,v in kwargs.items():
+        print(f'{v}, {k}')
+
+pozdrav_uzivatele(Honzo='Dobry den',Briane='Dobrý podvečer')
