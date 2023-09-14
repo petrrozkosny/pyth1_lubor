@@ -145,3 +145,17 @@ try:
         print(f'Hodnota klice {vstup} je {mesta[vstup]}')
 except KeyError:
     print(f'Město {vstup} není ve slovníku')
+______________________________________________________________________
+
+mesta = {'praha':None,'brno':'jihomoravsky','ostrava':'moravskoslezsky'}
+vstup = input('Zadejte město pro zjištění kraje: ')
+
+
+try:
+    if mesta[vstup] != None:
+        print(f'Kraj města {vstup} je {mesta[vstup]}')
+    else:
+        print(f'Pro mesto {vstup} nebyl doplneny kraj')
+
+except KeyError:
+    print(f'Město {vstup} není ve slovníku')
