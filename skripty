@@ -179,3 +179,17 @@ try:
 
 except ValueError:
     print('neslo prevest na cislo')
+_____________________________________________________________
+
+hodnota = input('Zadej cislo: ')
+
+try:
+    hodnota = int(hodnota)
+    if hodnota > 10:
+        print('je vetsi 10')
+    else:
+        print('je mensi ci rovno 10')
+except ValueError:
+    print('nepodarilo se prevest')
+finally:
+    print('ukoncuji beh skriptu')
