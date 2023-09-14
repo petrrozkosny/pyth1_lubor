@@ -245,3 +245,13 @@ def pozdrav_vsechny(**kwargs):
             print(f'Dobrý den {i}')
 
 pozdrav_vsechny(ucastnici=jmena)
+
+______________________________________________________
+
+def pozdrav(uzivatel,cast_dne = None):
+    if cast_dne == None:
+        print(f'Dobry den,{uzivatel}')
+    else:
+        print(f'Dobry {cast_dne},{uzivatel}')
+
+pozdrav('Miro', 'odpolodne')
