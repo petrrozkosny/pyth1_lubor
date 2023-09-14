@@ -219,4 +219,15 @@ try:
 except FileNotFoundError:    
     print('soubor nenalezen')
 
+_________________________________________________________________________
+
+import pandas as pd
+cesta_souboru = r'C:\Users\Student\Downloads\data\meteo1\3407572.csv'
+
+def vrat_radek(cesta,*,pocet_radku = 1):
+    df = pd.read_csv(cesta)
+    return df.iloc[0:pocet_radku]
+
+radek = vrat_radek(cesta_souboru,pocet_radku=100)
+print(radek)
 
