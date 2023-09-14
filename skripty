@@ -231,3 +231,17 @@ def vrat_radek(cesta,*,pocet_radku = 1):
 radek = vrat_radek(cesta_souboru,pocet_radku=100)
 print(radek)
 
+________________________________________________________________________________
+
+jmena = 'Petře,Vláďo'
+# jednotliva jmena oddelena carkou oddelujeme a vytvarime z nich polozky listu
+jmena = jmena.split(',')
+
+def pozdrav_vsechny(**kwargs):
+    # v kwargs mame slovnik, kdy hodnotou klice ucastnici je list
+    for k,v in kwargs.items():
+        # prochazime jednotlive polozky listu
+        for i in v:
+            print(f'Dobrý den {i}')
+
+pozdrav_vsechny(ucastnici=jmena)
