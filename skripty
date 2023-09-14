@@ -130,3 +130,18 @@ for i in soubory:
         df = pd.concat([df,pd.read_csv(cesta_souboru)])
         
 
+______________________________________________________________________
+
+# by Daniel, non-commercial usage only
+
+mesta = {'praha':None,'brno':'jihomoravsky','ostrava':'moravskoslezsky'}
+vstup = input('Zadejte mesto: ')
+
+try:
+#print(f'Kraj města {vstup} je {mesta[vstup]}')
+    if {mesta[vstup]} == None:
+        print(f'Pro klic {vstup} není hodnota')
+    else:
+        print(f'Hodnota klice {vstup} je {mesta[vstup]}')
+except KeyError:
+    print(f'Město {vstup} není ve slovníku')
