@@ -193,3 +193,30 @@ except ValueError:
     print('nepodarilo se prevest')
 finally:
     print('ukoncuji beh skriptu')
+
+
+____________________________________________________________________
+
+#import potrebnych knihoven
+import pandas as pd
+import os
+
+#uzivatelem zadana hodnota datoveho typu str
+soubor = input('Vloz nazev souboru: ')
+# slozka se soubory, promenna typu str
+cesta = r'C:\Users\Student\Downloads\data\meteo1'
+# pripojene hodnoty promennych cesta,soubor a hodnoty .csv, datovy typ str
+cesta_souboru = os.path.join(cesta,soubor+'.csv')
+
+try:
+    # nacitame soubor na adrese definovane promennou cesta_souboru
+    df = pd.read_csv(cesta_souboru)
+    # atribut .shape vraci tuple s poctem radku a sloupcu dataframe
+    velikost = df.shape
+    # vypisujeme hodnotu na nulte pozici tuple, tj. pocet radku
+    print(f'soubor {soubor} nacten, pocet radku {velikost[0]}')
+# blok osetrujici to, ze na dane cesta_soboru se nenachazi zadny soubor
+except FileNotFoundError:    
+    print('soubor nenalezen')
+
+
