@@ -159,3 +159,23 @@ try:
 
 except KeyError:
     print(f'Město {vstup} není ve slovníku')
+
+______________________________________________________________
+
+mesta = ['Praha','Brno','Ostrava']
+hodnota = input('Zadej cislo: ')
+
+try:
+    hodnota = int(hodnota)
+
+    try:
+        print(mesta[hodnota])
+    # k tomuto nedojde,protoze nadrazeny try zajistuje, ze hodnota je cislo
+    # pokud ne, tak prechazime do except ValueError
+    except TypeError:
+        print('Zadana hodnota neni cislo')
+    except IndexError:
+        print('Zadana hodnota je prilis velka')
+
+except ValueError:
+    print('neslo prevest na cislo')
