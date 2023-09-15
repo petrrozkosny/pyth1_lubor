@@ -2,7 +2,7 @@
 Napoveda k bodum  1  - 2.2. zde: https://docs.python-requests.org/en/latest/
 1. Importujte modul requests
 2. Vytvorte funkci zkontroluj_stranku s jednim pozicnim argumentem stranka
-2.1. do promenne r si ulozte navratovou hodnotu metody requests.get()
+2.1 do promenne r si ulozte navratovou hodnotu metody requests.get()
 2.2. pokud se atribut .status_code promenne r nerovna 200, vypiste uzivateli:
     "Stranka {stranka} nefunguje
     jinak vypiste uzivateli:
