@@ -276,3 +276,26 @@ for i in mesta_kopie:
 delka = len(mesta)- len(mesta_kopie)
 
 print(f'rozdil v delce: {delka}')
+
+_____________________________________________________________________
+
+import os
+pocet = None
+slozka = r'C:\Users\Student\Downloads\data\meteo1'
+
+def prochazej_slozku():
+    for soubor in os.listdir(slozka):
+        
+        if 'xlsx' in soubor:
+            global pocet
+            pocet = 1
+            # break pro zastaveni iterace, protoze nas nezajima pocet Excel
+            # break
+
+prochazej_slozku()
+if pocet == 1:
+    print('Slozka obsahuje Excel')
+else:
+    print('Slozka neobsahuje Excel')
+
+    
