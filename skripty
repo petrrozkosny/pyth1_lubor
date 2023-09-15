@@ -398,4 +398,65 @@ df_grouped.reset_index(inplace=True)
 # vykreslujeme sloupcovy graf, kdy na ose x jsou NAME a na ose y jsou PRCP
 df_grouped.plot.bar(x='NAME',y='PRCP')
 
+______________________________________________________________________________
+
+from pathlib import Path
+
+
+def delete_xlsx_sibling():
+    """
+    Smaze vsechny .xlsx, k nimz existuje .csv se stejnym kmenem jmena
+    """
+    # vytvori list (file_stems) jmen (bez pripony) vsech souboru ve slozce
+    # pouzito list comprehension, coz je pouze nahrada za
+    #   1) vytvoreni prazdneho listu
+    #   2) v cyklu pridavani do listu pomoci append
+    #   - takto je ten list vytvoren primo na miste a až si na to člověk zvykne, tak je to i přehlednější
+    file_stems = [stem.stem for stem in slozka.glob('*')]
+
+    # stems_to_remove je set() jmen, ktera se vyskytuji vicekrat
+    #   A aby se ta jmena, ktera se tam vyskytuji vicekrat, neukladala vicekrat,
+    #   je jejich jedinecnost zajistena mnozinou
+    # pouzito set comprehension
+    stems_to_remove = {stem for stem in file_stems
+                       if file_stems.count(stem) > 1}
+
+    # ukaze jmena souboru, jejichz xlsx budou smazany
+    if stems_to_remove:
+        print(f"Slozka obsahuje minimalne jeden Excel soubor")
+        print(', '.join(list(stems_to_remove)), '\n')
+
+    # ulozeni stavu adresare pro pozdejsi vypis
+    orig_status = {file.name for file in slozka.glob('*')}
+
+    # smazani nalezenych souboru
+    for stem in stems_to_remove:
+        file = stem+'.xlsx'
+        file_to_remove = slozka / file
+        file_to_remove.unlink()  # odstraneni souboru
+
+    # zaverecny report
+    new_status = {file.name for file in slozka.glob('*')}
+    print(f"Puvodni:\n {list(orig_status)}\n")
+    print(f"Zmeneny:\n {new_status}\n")
+    print(f"Smazano: {orig_status.difference(new_status)}")
+
+# --- main ---
+slozka = Path(r'C:\Users\Student\Documents\Python essentials\PYTH1\data\meteo1')
+
+delete_xlsx_sibling()
+
+# --- konec ---
+
+# OUTPUT
+# Slozka obsahuje minimalne jeden Excel soubor
+# 3407572 
+#
+# Puvodni:
+#  ['3407572.csv', '3407577.csv', '3407580.csv', '3407572.xlsx', '3407575.csv', '3407579.csv', '3407578.csv', '3407573.csv', '3407572 - kopie.xlsx', '3407574.csv']
+#
+# Zmeneny:
+#  {'3407572.csv', '3407577.csv', '3407580.csv', '3407575.csv', '3407579.csv', '3407578.csv', '3407573.csv', '3407572 - kopie.xlsx', '3407574.csv'}
+#
+# Smazano: {'3407572.xlsx'}
 
