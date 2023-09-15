@@ -311,3 +311,16 @@ for i in mesta_kopie:
     
 print(mesta_kopie)
 print(mesta)
+__________________________________________________________________________
+
+import copy
+
+mesta = [['brno','tisnov','kurim'],['olomouc','litovel','prerov',None]]
+mesta_kopie = copy.deepcopy(mesta)
+
+for i in mesta_kopie:
+    if None in i:
+        i.remove(None)
+    
+print(mesta_kopie)
+print(mesta)
