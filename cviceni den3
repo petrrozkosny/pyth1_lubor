@@ -27,3 +27,23 @@ stranky =["https://www.skoleni-ict.cz/kurz/Uvod-do-umele-inteligence-a-strojoveh
 
 Bonus3
 Pokud je stranka detailem kurzu, tj. URL obsahuje /kurz/, tak přes print vypsat cenu tohoto kurzu
+
+_____________________________________________________________________________________________________
+
+
+mesta = [['brno','tisnov','kurim'],['olomouc','litovel','prerov',None]]
+
+# Vytvorte si kopii objektu mesta, tu pojmenujte mesta_kopie
+# prochazejte objekt mesta_kopie, pokud polozka objektu (tj. list v listu) obsahuje
+# None, tak cely objekt (list listu) v mesta_kopie smazte
+# Porovnejte delku listu mesta a mesta_kopie, cimz zjistime pocet odebranych polozek
+# Pocet odebranych polozek vypiste pres print()
+
+# Vytvorte promennou pocet, nastavte jeji hodnotu na None
+# vytvorte promennou slozka, do te ulozte cestu slozky meteo1
+# napiste funkci prochazej slozku, ktera nema zadne parametry
+# Funkci prochazejte soubory ve slozce, pokud koncovka alespon jednoho souboru
+# obsahuje .xlsx, zmente hodnotu promenne pocet na 1
+# Na konci behu skriptu vypiste:
+# Slozka obsahuje Excel, pokud hodnota promenne pocet je 1
+# Slozka neobsahuje Excel, pokud hodnota promenne pocet je None
