@@ -25,3 +25,5 @@ stranky =["https://www.skoleni-ict.cz/kurz/Uvod-do-umele-inteligence-a-strojoveh
     "https://www.skoleni-ict.cz/kurz/Jazyk-SQL-zaklady-dotazovani-a-manipulace-s-daty-v-SQL-Serveru-SQL1.aspx"
        ]
 
+Bonus3
+Pokud je stranka detailem kurzu, tj. URL obsahuje /kurz/, tak přes print vypsat cenu tohoto kurzu
