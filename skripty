@@ -363,7 +363,10 @@ import os
 cesta_slozky = r'C:\Users\Student\Downloads\data\meteo1'
 
 df = pd.DataFrame()
-
 for soubor in os.listdir(cesta_slozky):
     cesta_souboru = os.path.join(cesta_slozky,soubor)
     df_soubor = pd.read_csv(cesta_souboru)
+    if df.empty:
+        sloupce = df_soubor.columns
+    df_soubor.columns = sloupce    
+    df = pd.concat([df,df_soubor])
