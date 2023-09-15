@@ -324,3 +324,24 @@ for i in mesta_kopie:
     
 print(mesta_kopie)
 print(mesta)
+
+___________________________________________________________
+
+class Mesto:
+    zeme = 'Cesko'
+
+    def __init__(self,okres,kraj,aquapark=None):
+        self.okres = okres
+        self.kraj = kraj
+        self.aquapark = aquapark
+
+
+    def pochval_mesto(self):
+        if self.aquapark == None:
+            print (f'Krasne mesto v okrese {self.okres}, ale nema aquapark')
+        else:
+            print (f'Krasne mesto v okrese {self.okres}, ktere ma i aquapark')
+
+
+kolin = Mesto('Kolin','Stredocesky kraj')
+kolin.pochval_mesto()
