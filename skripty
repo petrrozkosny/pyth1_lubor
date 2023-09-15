@@ -298,4 +298,16 @@ if pocet == 1:
 else:
     print('Slozka neobsahuje Excel')
 
+_____________________________________________________________________________________
+
+import copy
+
+mesta = [['brno','tisnov','kurim'],['olomouc','litovel','prerov',None]]
+mesta_kopie = copy.deepcopy(mesta)
+
+for i in mesta_kopie:
+    if None in i:
+        i.remove(None)
     
+print(mesta_kopie)
+print(mesta)
