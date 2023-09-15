@@ -345,3 +345,12 @@ class Mesto:
 
 kolin = Mesto('Kolin','Stredocesky kraj')
 kolin.pochval_mesto()
+
+_____________________________________________
+
+import re 
+
+retezec = 'mozilla,praha,192.168.5.11,brno,2,mozilla,praha,192.168.5.21,brno,2'
+
+ip_adresa = re.findall(r'([\d\.]{7,15})',retezec)
+print(ip_adresa)
