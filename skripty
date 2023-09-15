@@ -354,3 +354,16 @@ retezec = 'mozilla,praha,192.168.5.11,brno,2,mozilla,praha,192.168.5.21,brno,2'
 
 ip_adresa = re.findall(r'([\d\.]{7,15})',retezec)
 print(ip_adresa)
+
+__________________________________________________
+
+import pandas as pd 
+import os
+
+cesta_slozky = r'C:\Users\Student\Downloads\data\meteo1'
+
+df = pd.DataFrame()
+
+for soubor in os.listdir(cesta_slozky):
+    cesta_souboru = os.path.join(cesta_slozky,soubor)
+    df_soubor = pd.read_csv(cesta_souboru)
