@@ -1,0 +1,27 @@
+'''
+Napoveda k bodum  1  - 2.2. zde: https://docs.python-requests.org/en/latest/
+1. Importujte modul requests
+2. Vytvorte funkci zkontroluj_stranku s jednim pozicnim argumentem stranka
+2.1. do promenne r si ulozte navratovou hodnotu metody requests.get()
+2.2. pokud se atribut .status_code promenne r nerovna 200, vypiste uzivateli:
+    "Stranka {stranka} nefunguje
+    jinak vypiste uzivateli:
+    "Stranka {stranka funguje}
+Bonus
+2.3. Osetrete chybu ConnectionError, kdy:
+    pokud k chybe nedojde (try je uspesne), vracime body 2.2.zde testujeme, jestli requests.get() bylo uspesne
+    pokud dojde k chybe ConnectionError, vypiste uzivateli:
+    "Ke strance {stranka} se nebylo mozne pripojit"
+Konec bonusu
+
+3. Iterujte listem stranky, kdy kazdou jednu polozku dosadite jako parametr funkce zkontroluj_stranku()
+
+Bonus2
+Vytvorte list nefunkci_stranky, ktery bude obsahovat polozky listu stranky, ktere nevratily 
+http kod 200
+'''
+stranky =["https://www.skoleni-ict.cz/kurz/Uvod-do-umele-inteligence-a-strojoveho-uceni--AI1.aspx",
+    "https://www.skoleni-ict.cz/blog/multitasking-fungsuje/",
+    "https://www.skoleni-ict.cz/kurz/Jazyk-SQL-zaklady-dotazovani-a-manipulace-s-daty-v-SQL-Serveru-SQL1.aspx"
+       ]
+
