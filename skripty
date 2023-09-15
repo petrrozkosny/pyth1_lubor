@@ -370,3 +370,32 @@ for soubor in os.listdir(cesta_slozky):
         sloupce = df_soubor.columns
     df_soubor.columns = sloupce    
     df = pd.concat([df,df_soubor])
+
+____________________________________________________________
+
+import pandas as pd 
+import os
+
+cesta_slozky = r'C:\Users\Student\Downloads\data\meteo1'
+
+df = pd.DataFrame()
+for soubor in os.listdir(cesta_slozky):
+    cesta_souboru = os.path.join(cesta_slozky,soubor)
+    df_soubor = pd.read_csv(cesta_souboru)
+    if df.empty:
+        sloupce = df_soubor.columns
+    df_soubor.columns = sloupce    
+    df = pd.concat([df,df_soubor])
+
+# vytvorenni nove promenne, kdy za pomoci copy oddelujeme objekty v operacni pameti
+df_grouped = df.copy()
+# omezeni sloupcu, zajimaji nas jen sloupce NAME, PRCP
+df_grouped = df_grouped[['NAME','PRCP']]
+# agregace dataframe, kdy agregujeme dle NAME, agreagacni funkce SUM
+df_grouped = df_grouped.groupby('NAME').sum()
+# po agregaci je NAME v indexu, vracime zpet do sloupcu, viz skoleni PYDATA
+df_grouped.reset_index(inplace=True)
+# vykreslujeme sloupcovy graf, kdy na ose x jsou NAME a na ose y jsou PRCP
+df_grouped.plot.bar(x='NAME',y='PRCP')
+
+
