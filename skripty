@@ -263,3 +263,16 @@ def pozdrav_uzivatele(**kwargs):
         print(f'{v}, {k}')
 
 pozdrav_uzivatele(Honzo='Dobry den',Briane='Dobrý podvečer')
+
+
+____________________________________________________________
+
+mesta = [['brno','tisnov','kurim'],['olomouc','litovel','prerov',None]]
+mesta_kopie = mesta.copy()
+for i in mesta_kopie:   
+    if None in i:
+        mesta_kopie.remove(i)
+
+delka = len(mesta)- len(mesta_kopie)
+
+print(f'rozdil v delce: {delka}')
